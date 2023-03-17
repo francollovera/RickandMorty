@@ -1,0 +1,20 @@
+.contenedor{
+display: flex;
+justify-content: center;
+align-items: center;
+background: radial-gradient(circle at top left, #2a542a, #1d6465);  
+width: 1000px;
+height: 300px;
+border-radius:20px;
+}
+.parrafo{
+    text-align: left;
+    margin-right: 40px;
+    color: white;
+    font-size: 18px;
+}
+.imagen{
+    width: 250px;
+    border-radius: 20px;
+    margin-left:20px;
+}

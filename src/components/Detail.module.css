@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    
+    flex-direction:column; 
+    justify-content:space-around;
+    align-items: start;
+}
+.titulo{
+    color: rgb(217, 212, 212);
+    position: relative;
+    right: 400px;
+}
+.image{
+    border-radius: 60px;
+    position: relative;
+    left: 500px;
+    top: -380px;
+    width: 350px;
+}
