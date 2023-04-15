@@ -1,0 +1,24 @@
+
+.button{
+    
+    border: 3px solid #bcc3c4;
+    background-color: rgb(32, 32, 154);
+    margin-left: 10px;
+    color: #bcc8c9;
+    border-radius: 10px;
+
+    font-size: 15px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px 1px white;
+}
+
+
+.input{
+    width: 200px;
+    border: 3px solid #cbcecf;
+    height: 25px;
+    border-radius: 4px;
+    color: #242424;
+    font-size: 18px;
+    text-align: center;
+}
