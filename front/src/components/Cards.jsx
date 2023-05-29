@@ -1,26 +1,22 @@
-import Card from './Card';
-import style from './Cards.module.css'
+import Card from './Card'
+import style from './Card.module.css';
 
-
-/* Aqui pasa exactamente lo mismo, recibo la prop que envia app.js, osea OnClose y characters */
-
-export default function Cards(props) {
-   
-   return <div className = {style.contenedor}>
-   
-      
-      {props.characters.map((character)=>{
-         return( 
-             <Card
-             key = {character.id}
-             id = {character.id}
-         name = {character.name}
-         species = {character.species}
-         gender = {character.gender}
-         image = {character.image}
-         onClose = {props.onClose}/>
-      );
-      })}
-      
-   </div>;
+export default function Cards({ characters, onClose }) {
+    return (
+      <div className={style.CardContainer}>
+        {
+          characters.map((character) => 
+            <Card
+              key={character.id}
+              name={character.name}
+              species={character.species}
+              gender={character.gender}
+              image={character.image}
+              detailId={character.id}
+              onClose={() => onClose(character.id)}
+            />
+          )
+        }
+      </div>
+    )
 }

@@ -1,27 +1,38 @@
 
-import { useDispatch, useSelector } from "react-redux";
-import Card from "./Card";
+import { connect } from "react-redux";
+import style from './Favorites.module.css'
+import { Link } from "react-router-dom";
 
-
-const Favorites = () =>{
-    const favorites = useSelector((state) => state.myFavorites);
-
+function Favorites({myFavorites}) {
+    console.log(myFavorites);
     return (
-        <>
-        {favorites.map(({id, name, species, gender, image})=>{
-            return (
-                <Card
-                key = {id}
-                id = {id}
-                name = {name}
-                species = {species}
-                gender = {gender}
-                image = {image}
-                />
-            );
-        })}
+        < >
+        <Link className={style.home} to="/home">Back</Link>
+        <div className={style.container}>
+        
+            
+            <h2 className={style.title}>My Favorites</h2>
+            
+            {
+                myFavorites?.map((character) => (
+                    <div className={style.characters}>
+                        <h2>{character.name}</h2>
+                        <h2>{character.gender}</h2>
+                        <img src={character.image} alt={character.name} />
+                    </div>
+                ))
+            }
+        </div>
         </>
     );
-};
+}
 
-export default Favorites;
+export function mapStateToProps(state) {
+    return {
+        myFavorites : state.myFavorites
+    }
+}
+
+
+
+export default connect(mapStateToProps)(Favorites);

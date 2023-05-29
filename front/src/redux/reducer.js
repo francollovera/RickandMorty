@@ -1,49 +1,26 @@
-import {
-    ADD_FAVORITE,
-    CLEAN_DETAIL,
-    GET_CHARACTER_DETAIL,
-    REMOVE_FAVORITE,
-    GET_FAVORITE,
-} from './actions';
+import { ADD_FAV, REMOVE_FAV } from './actions-typs';
 
-const initialState = {
-    myFavorites : [],
-    charcaterDetail : {},
-};
+const initialSate = {
+    myFavorites : []
+}
 
-const rootReducer = ( state = initialState, action) =>{
-    switch (action.type){
-        case ADD_FAVORITE:
+export default function reducer(state = initialSate, {type, payload}) {
+    switch (type) {
+        case ADD_FAV:
+            console.log("soy el reducer", state.myFavorites)
+            //state.myFavorites.push(payload);
             return {
                 ...state,
-                myFavorites: [...state.myFavorites, action.payload],
-            };
-
-            case CLEAN_DETAIL:
-            return {
+                myFavorites: [...state.myFavorites, payload]
+            }
+            case REMOVE_FAV:
+            return{
                 ...state,
-                charcaterDetail:{},
-            };
-              case GET_CHARACTER_DETAIL:
+                myFavorites: state.myFavorites.filter((element) => element.id !== payload)
+            }
+        default:
             return {
-                ...state,
-                charcaterDetail: action.payload ,
-            };
-            case GET_FAVORITE:
-                return {
-                    ...state,
-                    charcaterDetail: {} ,
-                };
-              case REMOVE_FAVORITE:
-            return {
-                ...state,
-                myFavorites : state.myFavorites.filter(
-            (char) => char.id !== action.payload
-                ) ,
-            };
-            default:
-                return {...state};
-    };
-};
-
-export default rootReducer;
+                ...state
+            }
+    }
+} 

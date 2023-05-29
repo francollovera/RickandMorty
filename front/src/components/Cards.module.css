@@ -1,4 +1,8 @@
-.contenedor{
-    display: flex;
-    flex-direction: row;
+.CardContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  flex-wrap: wrap;
+  width: auto;
+  margin-bottom: 5%;
 }

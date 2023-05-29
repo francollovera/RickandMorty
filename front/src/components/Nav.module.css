@@ -1,25 +1,40 @@
-.contenedorNav{
-    width:198vh;
-    height: 80px;
-    border: 2px solid rgb(220, 219, 219);
-    margin-bottom: 60px;
+/* .container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: ;
+} */
+.containLetter {
+    text-align: center;
+    border-radius: 0;
+}
+.containLetter img {
+    width: 50%;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding-right: 30px;
-    border-radius: 20px;
-    box-shadow: rgb(121, 113, 113) 0px 0px 3px 3px ;
-}
-.Link{
-    color: rgb(150, 150, 168);
-    font-size: 14px;
-  
-}
-.Link:hover{
+    background-color: transparent;
     
-    color: rgb(132, 132, 234);
-    transition: all 500ms ease-out;
-    width: 30px;
+    padding: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 100px;
+    font-style: oblique;
     
-   
+}
+
+.nav a:hover {
+    color: #007bff;
+}
+
+.nav br {
+    display: none;
 }

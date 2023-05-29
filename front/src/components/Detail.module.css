@@ -1,19 +1,50 @@
-.contenedor{
+.container {
     display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-left: 20%;
+    margin-bottom: 5%;
+    gap:10%;
+    width: 60%;
+    border-radius: 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    background-color: whitesmoke;
+    border: 30px solid greenyellow;
+}
+.containerBtnBack {
+    display: flex;
+    justify-content: center;
+}
+.backHome {
+    text-align: center;
+    border-radius: 999px;
+    border: 2px solid black;
+    background-color: rgb(99, 96, 96);
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    box-shadow: 0 5px 2px #666;
+    margin-bottom: 5%; 
+    margin-top: 2%;
+}
+
+.backHome:hover {
+    color: #69C8ECFF;
+    border: 2px solid black;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.image {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    object-fit: fill;
+
+}
+
+.title {
+    margin-right: 15%;
+    text-align: center;
     
-    flex-direction:column; 
-    justify-content:space-around;
-    align-items: start;
-}
-.titulo{
-    color: rgb(217, 212, 212);
-    position: relative;
-    right: 400px;
-}
-.image{
-    border-radius: 60px;
-    position: relative;
-    left: 500px;
-    top: -380px;
-    width: 350px;
 }

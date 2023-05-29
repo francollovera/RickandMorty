@@ -1,33 +1,15 @@
-export const ADD_FAVORITE = 'ADD_FAVORITE';
-export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
-export const GET_CHARACTER_DETAIL = 'GET_CHARACTER_DETAIL';
-export const CLEAN_DETAIL = 'CLEAN_DETAIL';
+import {ADD_FAV, REMOVE_FAV } from './actions-typs';
 
+export function addFavorites(character) {
+    return {
+        type: ADD_FAV,
+        payload: character
+    }
+}
 
-
-
-export const removeFavorite = (id) =>{
-    return {type : REMOVE_FAVORITE, payload : id};
-};
-
-export const getCharacterDetail = (id) =>{
-    return function (dispatch){
-        const URL_BASE = 'http://localhost:3001';
-
-        fetch(`${URL_BASE}/detail/${id}`)
-        .then((response)=> response.json())
-        .then((data)=> dispatch ({ type: GET_CHARACTER_DETAIL, payload: data}));
-    };
-};
-export const getFavorite = () =>{
-    return async function (dispatch){
-        const URL_BASE = 'http://localhost:3001';
-
-        const response = await axios.get(`${URL_BASE}/rickandmorty/fav`)
-        dispatch ({ type: GET_CHARACTER_DETAIL, payload: data});
-    };
-};
-
-export const cleanDetail = ()=>{
-    return {type: CLEAN_DETAIL}
-};
+export function removeFavorites(id) {
+    return {
+        type: REMOVE_FAV,
+        payload: id
+    }
+}

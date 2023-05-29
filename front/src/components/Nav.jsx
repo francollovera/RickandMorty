@@ -1,38 +1,38 @@
-import React from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from './SearchBar'
+
 import style from './Nav.module.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
+export default function Nav(props) {
+    const navigate = useNavigate();
+    const {onSearch} = props;
 
+    const handleClick = ()=> {
+        navigate('/');
+    }
 
-
-/* aqui estoy recibiendo unas props por paramentro que me envia el componente App, osea la funcion onSearch. */
-
-
-const Nav = (props) => {
-  return (
-    <div >
-      {props.location.pathname !== "/" ? (
-        <nav className={style.contenedorNav}>
-          
+    return(
         
-            <Link className={style.Link} to ={"/about"}>
-                <h3>ABOUT</h3>
-            </Link>
-            <br></br>
-            <SearchBar
-        onSearch={props.onSearch}/>
-        <br></br>
-            <Link className={style.Link}  to ={"/home"}>
-                <h3>HOME</h3>
-            </Link>
-            <Link className={style.Link}  to ={"/favorites"}>
-                <h3>FAVORITES</h3>
-            </Link>
-        </nav>
-      ) : null}
-    </div>
-  );
-};
+        <div className={style.container}>
+            
+            <div className={style.nav}>
+                <Link to="/">Home</Link>
+                <br />
+                <Link to="/about">About</Link>
+                <br />
+                <Link to="/favorites" >Favorites</Link>
+                <div className={style.containLetter} onClick={handleClick}>
+                
+            </div>
+                
+            </div>
+            
+            
+            
+            <SearchBar onSearch={onSearch}/>
+            
+        </div>
+        
+    )
 
-export default Nav;
+}
